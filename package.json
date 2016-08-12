@@ -31,7 +31,7 @@
     "object-values": "^1.0.0"
   },
   "devDependencies": {
-    "alexa-response": "^3.0.1",
+    "alexa-response": "git://github.com/chadsmith/alexa-response.git#improvements",
     "ava": "^0.13.0",
     "babel-eslint": "^6.0.2",
     "babel-plugin-transform-class-properties": "^6.6.0",

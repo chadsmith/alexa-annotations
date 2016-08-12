@@ -203,15 +203,18 @@ var isAuthorized = function isAuthorized() {
 var SkillAnnotation = function SkillAnnotation(options) {
   return function (Skill) {
     return function (event, context, callback) {
-      var _ref = event || {};
+      event = event || {};
 
-      var request = _ref.request;
-      var session = _ref.session;
+      if (Object.keys(event.body || {}).length) event = event.body;
 
-      var _ref2 = session || {};
+      var _event = event;
+      var request = _event.request;
+      var session = _event.session;
 
-      var application = _ref2.application;
-      var attributes = _ref2.attributes;
+      var _ref = session || {};
+
+      var application = _ref.application;
+      var attributes = _ref.attributes;
 
 
       return isAuthorized(options, application).then(function () {
